@@ -5,9 +5,11 @@ import Box from '@mui/material/Box'
 import { css } from '@emotion/react'
 import { Button, Divider, Grid } from '@mui/material'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import { useRouter } from 'next/router'
 
 const Home: NextPage = () => {
   const matches = useMediaQuery('(min-width:1200px)')
+  const router = useRouter()
 
   return (
     <>
@@ -103,6 +105,7 @@ const Home: NextPage = () => {
               >
                 <Grid item>
                   <Button
+                    onClick={() => router.push('/projects')}
                     sx={{
                       boxShadow: '0px 4px 12px rgb(149 185 193 / 60%)',
                       fontWeight: 'bolder',
