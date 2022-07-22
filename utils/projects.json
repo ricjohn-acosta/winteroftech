@@ -1,0 +1,79 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Poggers",
+      "description": "A very poggers project, for pogger champer people. We have a vision.",
+      "users": [
+        {
+          "id": 1,
+          "name": "John",
+          "type": "Project Manager",
+          "email": "john@email.com"
+        },
+        {
+          "id": 2,
+          "name": "Clay",
+          "type": "Scrum Master",
+          "email": "clay@email.com"
+        },
+        {
+          "id": 3,
+          "name": "Ryan",
+          "type": "Software Developer",
+          "email": "ryan@email.com"
+        }
+      ],
+      "maxMembers": 6,
+      "techStack": ["React, Typescript, Redux-Toolkit, Tailwindcss, C#"],
+      "phase": "Ideation",
+      "isVisible": true
+    },
+    {
+      "id": 2,
+      "name": "TheCLub",
+      "description": "A platform that gives unversity students to explore all available clubs within their area",
+      "users": [
+        {
+          "id": 4,
+          "name": "Jose",
+          "type": "Project Manager",
+          "email": "jose@email.com"
+        },
+        {
+          "id": 5,
+          "name": "Gerald",
+          "type": "Scrum Master",
+          "email": "gerald@email.com"
+        }
+      ],
+      "maxMembers": 6,
+      "techStack": ["Nextjs, Typescript, Graphql, ChakraUI"],
+      "phase": "Development",
+      "isVisible": true
+    },
+    {
+      "id": 3,
+      "name": "LooCate",
+      "description": "A platform that gives people the ability to help locate the nearest available public toilet.",
+      "users": [
+        {
+          "id": 4,
+          "name": "Jose",
+          "type": "Project Manager",
+          "email": "jose@email.com"
+        },
+        {
+          "id": 6,
+          "name": "David",
+          "type": "Backend Developer",
+          "email": "david@email.com"
+        }
+      ],
+      "maxMembers": 6,
+      "techStack": ["React-Native, Google Maps, Firebase"],
+      "phase": "Development",
+      "isVisible": true
+    }
+  ]
+}
