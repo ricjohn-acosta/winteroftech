@@ -15,7 +15,9 @@ import ProjectCard from '../src/components/Elements/Card/ProjectCard'
 
 const Projects = () => {
   const [age, setAge] = React.useState('')
-  const handleChange = (event) => {
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setAge(event.target.value)
   }
 
