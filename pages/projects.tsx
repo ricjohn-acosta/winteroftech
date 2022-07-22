@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../src/components/Navigation/Navbar";
+import Navbar from "../components/Navigation/Navbar";
 import {
   Box,
   Divider,
@@ -11,7 +11,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import ProjectCard from "../src/components/Elements/Card/ProjectCard";
+import ProjectCard from "../components/Elements/Card/ProjectCard";
 import projectData from "../utils/projects.json";
 import { Projects } from "../types";
 
