@@ -25,7 +25,7 @@
         }
       ],
       "maxMembers": 6,
-      "techStack": ["React, Typescript, Redux-Toolkit, Tailwindcss, C#"],
+      "techStack": ["React", "Typescript", "Redux-Toolkit", "Tailwindcss", "C#"],
       "phase": "Ideation",
       "isVisible": true
     },
@@ -48,7 +48,7 @@
         }
       ],
       "maxMembers": 6,
-      "techStack": ["Nextjs, Typescript, Graphql, ChakraUI"],
+      "techStack": ["Nextjs", "Typescript", "Graphql", "ChakraUI"],
       "phase": "Development",
       "isVisible": true
     },
@@ -71,8 +71,8 @@
         }
       ],
       "maxMembers": 6,
-      "techStack": ["React-Native, Google Maps, Firebase"],
-      "phase": "Development",
+      "techStack": ["React-Native", "Google Maps", "Firebase"],
+      "phase": "Planning",
       "isVisible": true
     }
   ]

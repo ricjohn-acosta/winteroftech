@@ -11,24 +11,34 @@ import {
 } from "@mui/material";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import PersonIcon from "@mui/icons-material/Person";
-const ProjectCard = () => {
+
+interface Props {
+  name: string;
+  description: string;
+  phase: string;
+  userCount: number;
+  maxMembers: number;
+  techStack: string[];
+}
+
+const ProjectCard = ({ name, description, phase, userCount, techStack }: Props) => {
   return (
     <Box sx={{ padding: "10px" }}>
       <Card sx={{ background: "#394867", minWidth: 300, borderRadius: "12px" }} elevation={20}>
-        <CardContent>
+        <CardContent sx={{ height: 300 }}>
           <Chip
             sx={{ background: "#fdfd96", marginBottom: "30px" }}
             label={
               <Typography variant={"body2"} sx={{ fontWeight: "bold", fontSize: "12px" }}>
-                IDEATION
+                {phase}
               </Typography>
             }
           />
           <Typography sx={{ fontWeight: "bolder", color: "#F1F6F9" }} variant="h5" component="div">
-            tetris game
+            {name}
           </Typography>
           <Typography sx={{ mb: 1.5, color: "#9BA4B4" }} color="text.secondary">
-            a multiplayer full-stack webapp made with react!
+            {description}
           </Typography>
           <Box sx={{ display: "flex", marginTop: "50px", alignItems: "center" }}>
             <Tooltip title={"Frontend developer"} placement={"top"} arrow>
@@ -58,6 +68,31 @@ const ProjectCard = () => {
             {/*</Typography>*/}
           </Box>
           <Box sx={{ marginTop: "8px" }}>
+            {techStack.map((tech, index) => (
+              <Chip
+                key={`${tech}-${index}`}
+                variant={"outlined"}
+                sx={{
+                  height: "24px",
+                  marginRight: "4px",
+                  color: "white",
+                  background: "#a7c3ff73",
+                  borderRadius: "4px",
+                  borderColor: "#F1F6F9",
+                }}
+                label={
+                  <Typography
+                    variant={"body2"}
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "10px",
+                    }}
+                  >
+                    {tech}
+                  </Typography>
+                }
+              />
+            ))}
             <Chip
               variant={"outlined"}
               sx={{

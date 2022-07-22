@@ -12,12 +12,16 @@ import {
   Typography,
 } from "@mui/material";
 import ProjectCard from "../src/components/Elements/Card/ProjectCard";
+import projectData from "../utils/projects.json";
+import { Projects } from "../types";
 
 const Projects = () => {
   const [age, setAge] = React.useState("");
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setAge(event.target.value);
   };
+
+  const projectsData: Projects = projectData;
 
   return (
     <Box
@@ -120,27 +124,18 @@ const Projects = () => {
           container
           xs={12}
         >
-          <Grid item xs={4}>
-            <ProjectCard />
-          </Grid>{" "}
-          <Grid item xs={4}>
-            <ProjectCard />
-          </Grid>{" "}
-          <Grid item xs={4}>
-            <ProjectCard />
-          </Grid>{" "}
-          <Grid item xs={4}>
-            <ProjectCard />
-          </Grid>{" "}
-          <Grid item xs={4}>
-            <ProjectCard />
-          </Grid>{" "}
-          <Grid item xs={4}>
-            <ProjectCard />
-          </Grid>{" "}
-          <Grid item xs={4}>
-            <ProjectCard />
-          </Grid>
+          {projectsData.projects.map((project) => (
+            <Grid key={project.id} item xs={4}>
+              <ProjectCard
+                name={project.name}
+                description={project.description}
+                phase={project.phase}
+                userCount={project.users.length}
+                maxMembers={project.maxMembers}
+                techStack={project.techStack}
+              />
+            </Grid>
+          ))}
         </Grid>
       </Box>
     </Box>
