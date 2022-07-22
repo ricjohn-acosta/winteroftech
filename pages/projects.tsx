@@ -1,5 +1,5 @@
-import React from 'react'
-import Navbar from '../src/components/Navigation/Navbar'
+import React from "react";
+import Navbar from "../src/components/Navigation/Navbar";
 import {
   Box,
   Divider,
@@ -10,28 +10,25 @@ import {
   Select,
   TextField,
   Typography,
-} from '@mui/material'
-import ProjectCard from '../src/components/Elements/Card/ProjectCard'
+} from "@mui/material";
+import ProjectCard from "../src/components/Elements/Card/ProjectCard";
 
 const Projects = () => {
-  const [age, setAge] = React.useState('')
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setAge(event.target.value)
-  }
+  const [age, setAge] = React.useState("");
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setAge(event.target.value);
+  };
 
   return (
     <Box
       sx={{
-        background:
-          'linear-gradient(200deg, rgba(20,39,78,1) 35%, rgba(57,72,103,1) 100%)',
+        background: "linear-gradient(200deg, rgba(20,39,78,1) 35%, rgba(57,72,103,1) 100%)",
       }}
     >
       <Navbar />
       <Box
         sx={{
-          height: 'auto',
+          height: "auto",
 
           paddingTop: 10,
           paddingLeft: 36,
@@ -41,38 +38,38 @@ const Projects = () => {
         <Grid container xs={12}>
           <Box
             sx={{
-              display: 'flex',
-              alignItems: 'center',
-              width: '100%',
+              display: "flex",
+              alignItems: "center",
+              width: "100%",
             }}
           >
             <Typography
               sx={{
-                fontWeight: 'bolder',
-                color: '#F1F6F9',
+                fontWeight: "bolder",
+                color: "#F1F6F9",
                 fontSize: 48,
                 flexGrow: 1,
               }}
-              variant={'h1'}
+              variant={"h1"}
             >
               Projects
             </Typography>
             <Box
               sx={{
-                display: 'flex',
-                alignItems: 'center',
+                display: "flex",
+                alignItems: "center",
                 minWidth: 410,
-                marginRight: '34px',
+                marginRight: "34px",
               }}
             >
               <TextField
                 sx={{
-                  background: 'white',
-                  marginRight: '6px',
-                  borderRadius: '4px',
+                  background: "white",
+                  marginRight: "6px",
+                  borderRadius: "4px",
                 }}
-                variant={'filled'}
-                size={'small'}
+                variant={"filled"}
+                size={"small"}
                 id="outlined-select-currency"
                 select
                 label="Sort by phase"
@@ -85,9 +82,9 @@ const Projects = () => {
                 <MenuItem value={20}>Descending</MenuItem>
               </TextField>
               <TextField
-                sx={{ background: 'white', borderRadius: '4px' }}
-                variant={'filled'}
-                size={'small'}
+                sx={{ background: "white", borderRadius: "4px" }}
+                variant={"filled"}
+                size={"small"}
                 id="outlined-select-currency"
                 select
                 label="Sort by member count"
@@ -104,20 +101,20 @@ const Projects = () => {
         </Grid>
         <Grid
           sx={{
-            marginTop: '20px',
+            marginTop: "20px",
             // paddingLeft: '100px',
             // paddingRight: '100px',
           }}
           xs={12}
         >
-          <Divider sx={{ background: '#394867' }} />
+          <Divider sx={{ background: "#394867" }} />
         </Grid>
         <Grid
           sx={{
             marginTop: 2,
             paddingBottom: 4,
-            justifyContent: 'center',
-            alignItems: 'center',
+            justifyContent: "center",
+            alignItems: "center",
           }}
           // spacing={4}
           container
@@ -125,29 +122,29 @@ const Projects = () => {
         >
           <Grid item xs={4}>
             <ProjectCard />
-          </Grid>{' '}
+          </Grid>{" "}
           <Grid item xs={4}>
             <ProjectCard />
-          </Grid>{' '}
+          </Grid>{" "}
           <Grid item xs={4}>
             <ProjectCard />
-          </Grid>{' '}
+          </Grid>{" "}
           <Grid item xs={4}>
             <ProjectCard />
-          </Grid>{' '}
+          </Grid>{" "}
           <Grid item xs={4}>
             <ProjectCard />
-          </Grid>{' '}
+          </Grid>{" "}
           <Grid item xs={4}>
             <ProjectCard />
-          </Grid>{' '}
+          </Grid>{" "}
           <Grid item xs={4}>
             <ProjectCard />
           </Grid>
         </Grid>
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
