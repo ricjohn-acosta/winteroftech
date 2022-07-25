@@ -1,12 +1,12 @@
-import * as React from "react";
-import type { NextPage } from "next";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Link from "../utils/Link";
-import ProTip from "../utils/ProTip";
-import Copyright from "../utils/Copyright";
+import * as React from 'react';
+import type { NextPage } from 'next';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Link from '../utils/Link';
+import ProTip from '../utils/ProTip';
+import Copyright from '../utils/Copyright';
 
 const About: NextPage = () => {
   return (
@@ -14,10 +14,10 @@ const About: NextPage = () => {
       <Box
         sx={{
           my: 4,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <Typography variant="h4" component="h1" gutterBottom>

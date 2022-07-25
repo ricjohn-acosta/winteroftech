@@ -2,16 +2,24 @@
   "name": "nextjs-with-typescript",
   "version": "5.0.0",
   "private": true,
+  "engines": {
+    "node": ">=14.0.0",
+    "yarn": ">=1.22.0",
+    "npm": "use-yarn-please"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
     "prepare": "husky install",
-    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
-    "check-types": "tsc",
-    "validate": "yarn prettier && yarn lint && yarn check-types && yarn build"
+    "format": "yarn run format:js && yarn run format:json && yarn run format:md && yarn run format:ts",
+    "format:js": "prettier --ignore-path .gitignore --write \"app/**/*.js\"",
+    "format:json": "prettier --ignore-path .gitignore --write \"app/**/*.json\"",
+    "format:md": "prettier --ignore-path .gitignore --write \"**/*.md\"",
+    "format:ts": "prettier --ignore-path .gitignore --write \"app/**/*.ts{,x}\"",
+    "checkTs": "tsc --noEmit",
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx|md)\""
   },
   "dependencies": {
     "@emotion/cache": "latest",
@@ -20,12 +28,15 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
+    "lint-staged": "^13.0.3",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
     "styled-jsx": "^5.0.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@types/node": "latest",
     "@types/react": "latest",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
@@ -38,5 +49,10 @@
     "husky": "^8.0.0",
     "prettier": "^2.7.1",
     "typescript": "latest"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write"
+    ]
   }
 }
