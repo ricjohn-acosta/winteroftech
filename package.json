@@ -19,7 +19,9 @@
     "format:md": "prettier --ignore-path .gitignore --write \"**/*.md\"",
     "format:ts": "prettier --ignore-path .gitignore --write \"app/**/*.ts{,x}\"",
     "checkTs": "tsc --noEmit",
-    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx|md)\""
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx|md)\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@emotion/cache": "latest",
@@ -35,17 +37,28 @@
     "styled-jsx": "^5.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.9",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack5": "^6.5.9",
+    "@storybook/manager-webpack5": "^6.5.9",
+    "@storybook/react": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
     "@types/node": "latest",
     "@types/react": "latest",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
     "autoprefixer": "^10.4.7",
+    "babel-loader": "^8.2.5",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-storybook": "^0.6.1",
     "husky": "^8.0.0",
     "prettier": "^2.7.1",
     "typescript": "latest"
