@@ -1,0 +1,83 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+jobs:
+  tests_unit:
+    <<: *defaults
+    parallelism: 4
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    # docker:
+    #   - image: cimg/base:stable
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore node modules
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}-{{ arch }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - save_cache:
+          name: Save node modules
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}-{{ arch }}
+      - run:
+          # We don't want to install CocoaPods on ubuntu where we run the tests.
+          name: Set up dummy `pod` command
+          command: |
+            sudo ln /bin/true /usr/local/bin/pod
+      - run:
+          name: Ensure git user is configured
+          command: |
+            git config --global user.email "jcv.santos229@gmail.com"
+            git config --global user.name "jose-vs"
+      - run:
+          name: Install PNPM for tests
+          command: |
+            sudo chmod 777 /usr/local/bin
+            curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm@7
+            pnpm config set store-dir ../.pnpm-store
+      - run:
+          name: Run tests
+          command: yarn test
+          no_output_timeout: 5m
+
+  # build: 
+  #   <<: *defaults
+  #   steps:
+  #     - checkout
+  #     - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+  #     - restore_cache:
+  #         name: Restore node modules
+  #         keys:
+  #           - v1-dependencies-{{ checksum "package.json" }}-{{ arch }}
+  #           # fallback to using the latest cache if no exact match is found
+  #           - v1-dependencies-
+  #     # Run semantic-release after all the above is set.
+  #     - run:
+  #         name: Publish to npm
+  #         command: yarn ci:publish # this will be added to your package.json scripts
+      
+
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+workflows:
+  test_and_build:
+    jobs:
+      - tests_unit
+      # - build: # Disabled until I've written more test cases and a build script
+      #   requires: 
+      #   - tests_unit
+      #   filters: 
+      #   branches: 
+      #     only: main
+      
