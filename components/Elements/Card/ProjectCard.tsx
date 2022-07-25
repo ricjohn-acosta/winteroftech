@@ -1,4 +1,4 @@
-import React from 'react';
+import PersonIcon from '@mui/icons-material/Person';
 import {
   Box,
   Button,
@@ -9,8 +9,6 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import PersonIcon from '@mui/icons-material/Person';
 
 interface Props {
   name: string;
@@ -21,7 +19,7 @@ interface Props {
   techStack: string[];
 }
 
-const ProjectCard = ({ name, description, phase, userCount, techStack }: Props) => {
+const ProjectCard = ({ name, description, phase, techStack }: Props) => {
   return (
     <Box sx={{ padding: '10px' }}>
       <Card sx={{ background: '#394867', minWidth: 300, borderRadius: '12px' }} elevation={20}>

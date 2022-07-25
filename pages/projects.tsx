@@ -1,19 +1,9 @@
+import { Box, Divider, Grid, MenuItem, TextField, Typography } from '@mui/material';
 import React from 'react';
-import Navbar from '../components/Navigation/Navbar';
-import {
-  Box,
-  Divider,
-  FormControl,
-  Grid,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-  Typography,
-} from '@mui/material';
 import ProjectCard from '../components/Elements/Card/ProjectCard';
-import projectData from '../utils/projects.json';
-import { Projects } from '../types';
+import Navbar from '../components/Navigation/Navbar';
+import { Projects } from '../lib/types/types';
+import projectData from '../lib/utils/projects.json';
 
 const Projects = () => {
   const [age, setAge] = React.useState('');

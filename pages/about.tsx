@@ -1,12 +1,11 @@
-import * as React from 'react';
-import type { NextPage } from 'next';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Link from '../utils/Link';
-import ProTip from '../utils/ProTip';
-import Copyright from '../utils/Copyright';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import type { NextPage } from 'next';
+import Copyright from '../lib/utils/Copyright';
+import Link from '../lib/utils/Link';
+import ProTip from '../lib/utils/ProTip';
 
 const About: NextPage = () => {
   return (

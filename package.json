@@ -67,5 +67,8 @@
     "*.{js,jsx,ts,tsx}": [
       "prettier --write"
     ]
+  },
+  "resolutions": {
+    "webpack": "^5"
   }
 }

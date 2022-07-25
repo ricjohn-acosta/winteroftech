@@ -1,7 +1,4 @@
-import React from 'react';
-import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import { css } from '@emotion/react';
+import { AppBar, Box, Toolbar } from '@mui/material';
 import Image from 'next/image';
 
 const Navbar = () => {

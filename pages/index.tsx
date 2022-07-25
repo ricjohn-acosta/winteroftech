@@ -1,12 +1,11 @@
-import * as React from 'react';
-import type { NextPage } from 'next';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 import { css } from '@emotion/react';
 import { Button, Divider, Grid } from '@mui/material';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { useRouter } from 'next/router';
+import type { NextPage } from 'next';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 const Home: NextPage = () => {
   const matches = useMediaQuery('(min-width:1200px)');

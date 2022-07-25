@@ -6,6 +6,7 @@
     "prettier",
     "next/core-web-vitals",
     "eslint:recommended",
+    "plugin:storybook/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
   "parserOptions": {
@@ -35,6 +36,14 @@
     "jest": false,
     "it": false
   },
+  "overrides": [
+    {
+      "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
+      "rules": {
+        "storybook/hierarchy-separator": "error"
+      }
+    }
+  ],
   "rules": {
     "@typescript-eslint/ban-ts-ignore": 0,
     "@typescript-eslint/ban-ts-comment": 0,
