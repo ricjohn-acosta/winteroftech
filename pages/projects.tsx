@@ -1,11 +1,12 @@
 import { Box, Divider, Grid, MenuItem, TextField, Typography } from '@mui/material';
 import React from 'react';
-import ProjectCard from '../components/Elements/Card/ProjectCard';
-import Navbar from '../components/Navigation/Navbar';
+import ProjectCard from '../components/elements/card/ProjectCard';
+import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import { Projects } from '../lib/types/types';
 import projectData from '../lib/utils/projects.json';
+import { NextPageWithLayout } from './page';
 
-const Projects = () => {
+const Projects: NextPageWithLayout = () => {
   const [age, setAge] = React.useState('');
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setAge(event.target.value);
@@ -19,7 +20,6 @@ const Projects = () => {
         background: 'linear-gradient(200deg, rgba(20,39,78,1) 35%, rgba(57,72,103,1) 100%)',
       }}
     >
-      <Navbar />
       <Box
         sx={{
           height: 'auto',
@@ -133,3 +133,7 @@ const Projects = () => {
 };
 
 export default Projects;
+
+Projects.getLayout = (page) => {
+  return <PrimaryLayout>{page}</PrimaryLayout>;
+};

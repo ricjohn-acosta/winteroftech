@@ -5,17 +5,24 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import theme from '../lib/styles/theme';
 import createEmotionCache from '../lib/utils/createEmotionCache';
+import { NextPageWithLayout } from './page';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
+  Component: NextPageWithLayout;
 }
 
-export default function MyApp(props: MyAppProps) {
-  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-  return (
+export default function MyApp({
+  Component,
+  emotionCache = clientSideEmotionCache,
+  pageProps,
+}: MyAppProps) {
+  const getLayout = Component.getLayout || ((page) => page);
+
+  return getLayout(
     <CacheProvider value={emotionCache}>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
