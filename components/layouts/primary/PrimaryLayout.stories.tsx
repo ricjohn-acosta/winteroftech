@@ -4,6 +4,8 @@ const base: IPrimaryLayout = {
   children: '{{component}}',
 };
 
-export const mockPrimaryLayoutProps = {
+export const MockPrimaryLayoutProps = {
   base,
 };
+
+export default MockPrimaryLayoutProps;
